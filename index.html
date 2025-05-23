@@ -1,1 +1,71 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node Music Maker</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Using libraries from CDNs so you don't need to download anything -->
+  <script src="https://cdn.jsdelivr.net/npm/rete@1.4.4/build/rete.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/rete-connection-plugin@0.9.0/build/connection-plugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/rete-vue-render-plugin@0.5.0/build/vue-render-plugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tone@14.7.77/build/Tone.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Node Music Maker</h1>
+  </header>
+  
+  <div class="container">
+    <div class="sidebar">
+      <div class="category" id="instruments">
+        <h3>Instruments</h3>
+        <button class="node-btn" data-type="piano">Piano</button>
+        <button class="node-btn" data-type="synth">Synth</button>
+        <button class="node-btn" data-type="guitar">Guitar</button>
+        <button class="node-btn" data-type="bass">Bass</button>
+        <button class="node-btn" data-type="drums">Drums</button>
+      </div>
+      
+      <div class="category" id="chords">
+        <h3>Chords</h3>
+        <button class="node-btn" data-type="chord">Chord</button>
+        <button class="node-btn" data-type="progression">Chord Progression</button>
+      </div>
+      
+      <div class="category" id="effects">
+        <h3>Effects</h3>
+        <button class="node-btn" data-type="reverb">Reverb</button>
+        <button class="node-btn" data-type="chorus">Chorus</button>
+        <button class="node-btn" data-type="delay">Delay</button>
+      </div>
+      
+      <div class="category" id="math">
+        <h3>Math</h3>
+        <button class="node-btn" data-type="number">Number</button>
+        <button class="node-btn" data-type="add">Add</button>
+        <button class="node-btn" data-type="subtract">Subtract</button>
+      </div>
+    </div>
+    
+    <div id="node-editor" class="node-editor"></div>
+    
+    <div id="export-panel" class="export-panel">
+      <div class="transport-controls">
+        <button id="play">▶ Play</button>
+        <button id="stop">■ Stop</button>
+        <div class="timeline">
+          <div class="progress-bar"></div>
+        </div>
+      </div>
+      <div class="export-options">
+        <button id="export-wav">Export WAV</button>
+        <button id="export-mp3">Export MP3</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="app.js"></script>
+</body>
+</html>
